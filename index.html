@@ -72,32 +72,48 @@ section {
   transform: translateY(-10px);
 }
 
-/* CHAKRA ANIMATION */
-.chakra {
+/* 🌈 ADVANCED CHAKRA ANIMATION */
+.chakra-container {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   margin-top: 30px;
 }
 
-.chakra div {
-  width: 20px;
-  height: 20px;
+.chakra {
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
-  animation: glow 2s infinite alternate;
+  position: relative;
+  animation: pulse 2s infinite ease-in-out;
 }
 
-.chakra div:nth-child(1) { background: red; }
-.chakra div:nth-child(2) { background: orange; }
-.chakra div:nth-child(3) { background: yellow; }
-.chakra div:nth-child(4) { background: green; }
-.chakra div:nth-child(5) { background: blue; }
-.chakra div:nth-child(6) { background: indigo; }
-.chakra div:nth-child(7) { background: violet; }
+/* Chakra Colors */
+.c1 { background: #ff0000; animation-delay: 0s; }
+.c2 { background: #ff7f00; animation-delay: 0.2s; }
+.c3 { background: #ffff00; animation-delay: 0.4s; }
+.c4 { background: #00ff00; animation-delay: 0.6s; }
+.c5 { background: #00bfff; animation-delay: 0.8s; }
+.c6 { background: #4b0082; animation-delay: 1s; }
+.c7 { background: #8a2be2; animation-delay: 1.2s; }
 
-@keyframes glow {
-  from { opacity: 0.5; transform: scale(1); }
-  to { opacity: 1; transform: scale(1.5); }
+/* Glow Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px currentColor;
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.6);
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px currentColor;
+    opacity: 0.7;
+  }
 }
 
 /* BUTTON */
@@ -135,10 +151,15 @@ footer {
   <h1>Healing Energy Center</h1>
   <p>Reiki Grand Master & Clinical Hypnotherapist</p>
 
-  <!-- Chakra Animation -->
-  <div class="chakra">
-    <div></div><div></div><div></div>
-    <div></div><div></div><div></div><div></div>
+  <!-- 🌈 Chakra Animation -->
+  <div class="chakra-container">
+    <div class="chakra c1"></div>
+    <div class="chakra c2"></div>
+    <div class="chakra c3"></div>
+    <div class="chakra c4"></div>
+    <div class="chakra c5"></div>
+    <div class="chakra c6"></div>
+    <div class="chakra c7"></div>
   </div>
 </header>
 
