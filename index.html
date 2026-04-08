@@ -173,14 +173,18 @@ function sendFeedback() {
 <section id="feedback">
   <h2>Customer Feedback</h2>
 
-  <form onsubmit="event.preventDefault(); sendFeedback();">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <textarea id="message" placeholder="Your Feedback" required></textarea>
+  <form action="https://formspree.io/f/maqlkojl" method="POST">
+    
+    <input type="text" name="name" placeholder="Your Name" required>
+    
+    <input type="email" name="email" placeholder="Your Email" required>
+    
+    <textarea name="message" placeholder="Your Feedback" required></textarea>
+    
     <button type="submit">Send Feedback</button>
+
   </form>
-
 </section>
-
 <section id="contact">
   <h2>Contact Me</h2>
   <p>📞 Phone: +91-9168096425</p>
