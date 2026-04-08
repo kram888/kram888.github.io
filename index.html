@@ -9,12 +9,40 @@
 
 <style>
 
-/* 🌌 UNIVERSAL ENERGY BACKGROUND */
+/* 🌌 UNIVERSAL BACKGROUND */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: radial-gradient(circle at top, #1e1b4b, #020617);
   color: #e2e8f0;
+  margin-left: 220px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background: rgba(2, 6, 23, 0.95);
+  padding-top: 30px;
+  text-align: center;
+}
+
+.sidebar h2 {
+  color: #c084fc;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: rgba(124, 58, 237, 0.3);
 }
 
 /* HEADER */
@@ -29,21 +57,6 @@ header {
 @keyframes gradientMove {
   0% { background-position: left; }
   100% { background-position: right; }
-}
-
-/* NAV */
-nav {
-  display: flex;
-  justify-content: center;
-  background: rgba(2, 6, 23, 0.9);
-  padding: 15px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: white;
-  margin: 10px;
-  text-decoration: none;
 }
 
 /* SECTION */
@@ -68,10 +81,9 @@ h2 {
   padding: 25px;
   border-radius: 15px;
   border: 1px solid rgba(148, 163, 184, 0.2);
-  backdrop-filter: blur(10px);
 }
 
-/* 🌈 CHAKRA ANIMATION */
+/* 🌈 CHAKRA */
 .chakra-container {
   display: flex;
   justify-content: center;
@@ -95,19 +107,20 @@ h2 {
 .c7 { background: violet; animation-delay: 1.2s; }
 
 @keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 5px currentColor; opacity: 0.7; }
-  50% { transform: scale(1.6); box-shadow: 0 0 25px currentColor; opacity: 1; }
-  100% { transform: scale(1); box-shadow: 0 0 5px currentColor; opacity: 0.7; }
+  0% { transform: scale(1); box-shadow: 0 0 5px currentColor; }
+  50% { transform: scale(1.6); box-shadow: 0 0 25px currentColor; }
+  100% { transform: scale(1); }
 }
 
 /* BUTTON */
-button {
+.btn {
+  display: inline-block;
+  margin-top: 10px;
   background: linear-gradient(90deg, #06b6d4, #7c3aed);
+  padding: 10px 20px;
+  border-radius: 20px;
   color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 /* FORM */
@@ -124,18 +137,49 @@ input, textarea {
   border: none;
 }
 
+button {
+  background: linear-gradient(90deg, #06b6d4, #7c3aed);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+}
+
 /* FOOTER */
 footer {
   background: #020617;
   padding: 20px;
   text-align: center;
-  font-size: 0.9rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  body {
+    margin-left: 0;
+  }
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <h2>Menu</h2>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#blog">Blog</a>
+  <a href="https://universalknowledge11.blogspot.com/" target="_blank">External Blog</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#feedback">Feedback</a>
+</nav>
 
 <header>
   <h1>Healing Energy Center</h1>
@@ -152,13 +196,6 @@ footer {
   </div>
 </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#feedback">Feedback</a>
-</nav>
-
 <section id="about">
   <h2>About Me</h2>
   <p>I help people heal emotionally, mentally, and spiritually using Reiki and hypnotherapy.</p>
@@ -174,35 +211,18 @@ footer {
   </div>
 </section>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#blog">Blog</a>
-  <a href="https://universalknowledge11.blogspot.com/" target="_blank">My Mind Power Blog</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#feedback">Feedback</a>
-</nav>
-  
 <section id="blog">
   <h2>Latest Blogs</h2>
 
   <div class="services">
-
     <div class="card">
-      <h3>What is Reiki Healing?</h3>
-      <p>Understand how Reiki works and how it heals your body and mind.</p>
-      <a href="blog1.html" class="btn">Read More</a>
+      <h3>Visit My Blog</h3>
+      <p>Read Reiki, Chakra & Healing articles.</p>
+      <a href="https://universalknowledge11.blogspot.com/" target="_blank" class="btn">Read Blogs</a>
     </div>
-
-    <div class="card">
-      <h3>7 Chakras Explained</h3>
-      <p>Learn about all chakras and their importance in your life.</p>
-      <a href="blog2.html" class="btn">Read More</a>
-    </div>
-
   </div>
-</section>  
-  
+</section>
+
 <section id="testimonials">
   <h2>Client Testimonials</h2>
 
@@ -215,7 +235,6 @@ footer {
     <p>"Very powerful session, highly recommended."</p>
     <h4>- Sneha</h4>
   </div>
-
 </section>
 
 <section id="feedback">
@@ -227,11 +246,10 @@ footer {
     <textarea name="message" placeholder="Your Feedback" required></textarea>
     <button type="submit">Send Feedback</button>
   </form>
-
 </section>
 
 <footer>
-  <p>© 2026 Healing Energy Center | All Rights Reserved</p>
+  <p>© 2026 Healing Energy Center</p>
 </footer>
 
 </body>
