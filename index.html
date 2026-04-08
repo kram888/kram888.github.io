@@ -8,25 +8,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* 🌌 UNIVERSAL ENERGY BACKGROUND */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0f172a;
-  color: white;
+  background: radial-gradient(circle at top, #1e1b4b, #020617);
+  color: #e2e8f0;
 }
 
 /* HEADER */
 header {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  background: linear-gradient(135deg, #6d28d9, #06b6d4, #9333ea);
+  background-size: 200% 200%;
+  animation: gradientMove 6s infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
 }
 
 /* NAV */
 nav {
   display: flex;
   justify-content: center;
-  background: #020617;
+  background: rgba(2, 6, 23, 0.9);
   padding: 15px;
   flex-wrap: wrap;
 }
@@ -43,6 +52,10 @@ section {
   text-align: center;
 }
 
+h2 {
+  color: #c084fc;
+}
+
 /* SERVICES */
 .services {
   display: grid;
@@ -51,12 +64,14 @@ section {
 }
 
 .card {
-  background: #1e293b;
+  background: rgba(30, 41, 59, 0.8);
   padding: 25px;
   border-radius: 15px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
 }
 
-/* CHAKRA */
+/* 🌈 CHAKRA ANIMATION */
 .chakra-container {
   display: flex;
   justify-content: center;
@@ -75,14 +90,24 @@ section {
 .c2 { background: orange; animation-delay: 0.2s; }
 .c3 { background: yellow; animation-delay: 0.4s; }
 .c4 { background: green; animation-delay: 0.6s; }
-.c5 { background: blue; animation-delay: 0.8s; }
+.c5 { background: cyan; animation-delay: 0.8s; }
 .c6 { background: indigo; animation-delay: 1s; }
 .c7 { background: violet; animation-delay: 1.2s; }
 
 @keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 5px currentColor; }
-  50% { transform: scale(1.6); box-shadow: 0 0 20px currentColor; }
-  100% { transform: scale(1); }
+  0% { transform: scale(1); box-shadow: 0 0 5px currentColor; opacity: 0.7; }
+  50% { transform: scale(1.6); box-shadow: 0 0 25px currentColor; opacity: 1; }
+  100% { transform: scale(1); box-shadow: 0 0 5px currentColor; opacity: 0.7; }
+}
+
+/* BUTTON */
+button {
+  background: linear-gradient(90deg, #06b6d4, #7c3aed);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 /* FORM */
@@ -99,36 +124,15 @@ input, textarea {
   border: none;
 }
 
-button {
-  background: #06b6d4;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
 /* FOOTER */
 footer {
   background: #020617;
   padding: 20px;
   text-align: center;
+  font-size: 0.9rem;
 }
+
 </style>
-
-<script>
-function sendFeedback() {
-  let name = document.getElementById("name").value;
-  let message = document.getElementById("message").value;
-
-  let url = "https://wa.me/91XXXXXXXXXX?text=" 
-    + "Feedback from " + name + "%0A" 
-    + message;
-
-  window.open(url, '_blank');
-}
-</script>
-
 </head>
 
 <body>
@@ -151,13 +155,13 @@ function sendFeedback() {
 <nav>
   <a href="#about">About</a>
   <a href="#services">Services</a>
+  <a href="#testimonials">Testimonials</a>
   <a href="#feedback">Feedback</a>
-  <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I help people heal emotionally, mentally, and spiritually.</p>
+  <p>I help people heal emotionally, mentally, and spiritually using Reiki and hypnotherapy.</p>
 </section>
 
 <section id="services">
@@ -170,28 +174,35 @@ function sendFeedback() {
   </div>
 </section>
 
+<section id="testimonials">
+  <h2>Client Testimonials</h2>
+
+  <div class="card">
+    <p>"Amazing healing experience, I feel very peaceful."</p>
+    <h4>- Rahul</h4>
+  </div>
+
+  <div class="card">
+    <p>"Very powerful session, highly recommended."</p>
+    <h4>- Sneha</h4>
+  </div>
+
+</section>
+
 <section id="feedback">
   <h2>Customer Feedback</h2>
 
   <form action="https://formspree.io/f/maqlkojl" method="POST">
-    
     <input type="text" name="name" placeholder="Your Name" required>
-    
     <input type="email" name="email" placeholder="Your Email" required>
-    
     <textarea name="message" placeholder="Your Feedback" required></textarea>
-    
     <button type="submit">Send Feedback</button>
-
   </form>
-</section>
-<section id="contact">
-  <h2>Contact Me</h2>
-  <p>📞 Phone: +91-9168096425</p>
+
 </section>
 
 <footer>
-  <p>© 2026 Healing Energy Center</p>
+  <p>© 2026 Healing Energy Center | All Rights Reserved</p>
 </footer>
 
 </body>
